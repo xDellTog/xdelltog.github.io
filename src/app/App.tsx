@@ -1,14 +1,16 @@
 import React from 'react';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import HomePage from "./pages/home-page/HomePage";
+import AboutPage from "./pages/about-page/AboutPage";
 import './App.scss';
-import EmojiHand from "./components/emoji-hand/EmojiHand";
 
-function App() {
+export default function App() {
     return (
-        <div className="d-flex align-items-center justify-content-center vh-100 vw-100">
-            <h1> Hi there, I'm Daniel! </h1>
-            <EmojiHand/>
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/about" element={<AboutPage/>}/>
+                <Route path="/" element={<HomePage/>}/>
+            </Routes>
+        </Router>
     );
 }
-
-export default App;

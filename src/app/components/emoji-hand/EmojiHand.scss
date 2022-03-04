@@ -1,0 +1,12 @@
+.shake-animation {
+  animation: shake 1s infinite linear;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(30deg);
+  }
+}

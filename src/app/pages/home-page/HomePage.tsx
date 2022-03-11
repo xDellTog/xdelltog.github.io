@@ -1,20 +1,27 @@
 import React from 'react';
 import EmojiHand from "./../../components/emoji-hand/EmojiHand";
-import {useNavigate} from "react-router-dom";
 import {PageProps} from "../Page";
 import {Flex} from "../../components/flex/Flex";
 import {Toolbar, ToolbarItem} from "../../components/toolbar/Toolbar";
 import {Text, Title} from "../../components/text/Text";
 import {lightTheme, styled} from "../../../theme/theme";
 import profile from './../../assets/images/profile.png';
-import twitter from './../../assets/images/twitter.svg';
 import github from './../../assets/images/github.svg';
 import linkedin from './../../assets/images/linkedin.svg';
 
+import odontolive1 from './../../assets/images/odontolive1.png';
+import odontolive2 from './../../assets/images/odontolive2.png';
+import odontolive3 from './../../assets/images/odontolive3.png';
+
+import {Swiper, SwiperSlide} from "swiper/react";
+import "swiper/css";
+import {ProjectImage} from "../../components/project-image/ProjectImage";
+
+
 const BrandIcon = styled('img');
+const Box = styled('div');
 
 export default function HomePage({theme, toggleTheme}: PageProps) {
-    const navigate = useNavigate();
 
     return (
         <div>
@@ -60,14 +67,67 @@ export default function HomePage({theme, toggleTheme}: PageProps) {
             </Flex>
 
             <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
-                  css={{height: '100vh', px: '16px'}}
+                  css={{height: '100vh'}}
                   id="projects">
-                <Flex direction={'col'} alignItems={'start'} justifyContent={'center'}>
+                {/*<Flex direction={'col'} alignItems={'start'} justifyContent={'center'}>
                     <Text>- Ceofood</Text>
                     <Text>- Odontolive</Text>
                     <Text>- Onde Ir</Text>
                     <Text>- Force in Solution</Text>
-                </Flex>
+                </Flex>*/}
+
+                <Swiper slidesPerView={1}
+                        autoplay={true}
+                        effect={'fade'}
+                        fadeEffect={{crossFade: true}}
+                        onSlideChange={() => console.log('slide change')}
+                        onSwiper={(swiper) => console.log(swiper)}
+                        style={{width: '100vw'}}>
+                    <SwiperSlide>
+                        <Flex direction={'row'} css={{height: '100vh', backgroundColor: '$red10'}}>
+                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
+                                  css={{width: '50%'}}>
+                                <ProjectImage image={odontolive1}/>
+                            </Flex>
+                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
+                                  css={{width: '50%'}}>
+                            </Flex>
+                        </Flex>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Flex direction={'row'} css={{height: '100vh', backgroundColor: '$blue5'}}>
+                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
+                                  css={{width: '50%'}}>
+                                <ProjectImage image={odontolive1}/>
+                            </Flex>
+                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
+                                  css={{width: '50%'}}>
+                            </Flex>
+                        </Flex>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Flex direction={'row'} css={{height: '100vh', backgroundColor: '$purple10'}}>
+                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
+                                  css={{width: '50%'}}>
+                                <ProjectImage image={odontolive1}/>
+                            </Flex>
+                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
+                                  css={{width: '50%'}}>
+                            </Flex>
+                        </Flex>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Flex direction={'row'} css={{height: '100vh', backgroundColor: '$blue12'}}>
+                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
+                                  css={{width: '50%'}}>
+                                <ProjectImage image={odontolive1}/>
+                            </Flex>
+                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
+                                  css={{width: '50%'}}>
+                            </Flex>
+                        </Flex>
+                    </SwiperSlide>
+                </Swiper>
             </Flex>
 
             <Flex direction={'row'} alignItems={'center'} justifyContent={'center'}

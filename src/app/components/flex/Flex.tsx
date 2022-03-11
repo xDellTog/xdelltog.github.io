@@ -6,8 +6,8 @@ export const Flex = styled('div', {
     variants: {
         color: {
             gray: {
-                backgroundColor: '$slate3',
-                color: '$slate10'
+                backgroundColor: '$mauve3',
+                color: '$mauve10'
             }
         },
         direction: {

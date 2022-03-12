@@ -1,4 +1,5 @@
 import {
+    amber, amberDark,
     blue,
     blueDark,
     gray,
@@ -20,6 +21,18 @@ export const {css, styled, createTheme} = createStitches({
             paddingRight: value,
             paddingTop: value,
             paddingBottom: value,
+        }),
+        pt: (value: any) => ({
+            paddingTop: value,
+        }),
+        pr: (value: any) => ({
+            paddingRight: value,
+        }),
+        pb: (value: any) => ({
+            paddingBottom: value,
+        }),
+        pl: (value: any) => ({
+            paddingLeft: value,
         }),
         px: (value: any) => ({
             paddingLeft: value,
@@ -58,6 +71,7 @@ export const lightTheme = createTheme('light-theme', {
     colors: {
         ...gray,
         ...blue,
+        ...amber,
         ...red,
         ...green,
         ...purple,
@@ -70,6 +84,7 @@ export const darkTheme = createTheme('dark-theme', {
     colors: {
         ...grayDark,
         ...blueDark,
+        ...amberDark,
         ...redDark,
         ...greenDark,
         ...purpleDark,

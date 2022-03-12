@@ -12,7 +12,11 @@ export const Flex = styled('div', {
         },
         direction: {
             row: {
-                flexDirection: 'row',
+                flexDirection: 'column',
+
+                '@md': {
+                    flexDirection: 'row',
+                }
             },
             col: {
                 flexDirection: 'column',

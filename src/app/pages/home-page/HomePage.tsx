@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import EmojiHand from "./../../components/emoji-hand/EmojiHand";
 import {PageProps} from "../Page";
 import {Flex} from "../../components/flex/Flex";
@@ -9,19 +9,30 @@ import profile from './../../assets/images/profile.png';
 import github from './../../assets/images/github.svg';
 import linkedin from './../../assets/images/linkedin.svg';
 
-import odontolive1 from './../../assets/images/odontolive1.png';
-import odontolive2 from './../../assets/images/odontolive2.png';
-import odontolive3 from './../../assets/images/odontolive3.png';
-
-import {Swiper, SwiperSlide} from "swiper/react";
-import "swiper/css";
-import {ProjectImage} from "../../components/project-image/ProjectImage";
-
+import {Projects} from "../../components/projects/Projects";
 
 const BrandIcon = styled('img');
 const Box = styled('div');
 
+// TODO: nota de somente codigo, não design dos projetos
+
 export default function HomePage({theme, toggleTheme}: PageProps) {
+    useEffect(() => {
+        initSmoothScroll();
+    }, []);
+
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                const selector: any = anchor.getAttribute('href');
+                const div: any = document.querySelector(selector);
+                div.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    }
 
     return (
         <div>
@@ -51,7 +62,6 @@ export default function HomePage({theme, toggleTheme}: PageProps) {
                 <Text css={{textAlign: 'center'}}>Web and Mobile developer</Text>
             </Flex>
 
-
             <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
                   css={{height: '100vh', px: '16px'}}
                   id="about">
@@ -67,7 +77,7 @@ export default function HomePage({theme, toggleTheme}: PageProps) {
             </Flex>
 
             <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
-                  css={{height: '100vh'}}
+                  css={{minHeight: '100vh'}}
                   id="projects">
                 {/*<Flex direction={'col'} alignItems={'start'} justifyContent={'center'}>
                     <Text>- Ceofood</Text>
@@ -76,58 +86,7 @@ export default function HomePage({theme, toggleTheme}: PageProps) {
                     <Text>- Force in Solution</Text>
                 </Flex>*/}
 
-                <Swiper slidesPerView={1}
-                        autoplay={true}
-                        effect={'fade'}
-                        fadeEffect={{crossFade: true}}
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}
-                        style={{width: '100vw'}}>
-                    <SwiperSlide>
-                        <Flex direction={'row'} css={{height: '100vh', backgroundColor: '$red10'}}>
-                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
-                                  css={{width: '50%'}}>
-                                <ProjectImage image={odontolive1}/>
-                            </Flex>
-                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
-                                  css={{width: '50%'}}>
-                            </Flex>
-                        </Flex>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Flex direction={'row'} css={{height: '100vh', backgroundColor: '$blue5'}}>
-                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
-                                  css={{width: '50%'}}>
-                                <ProjectImage image={odontolive1}/>
-                            </Flex>
-                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
-                                  css={{width: '50%'}}>
-                            </Flex>
-                        </Flex>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Flex direction={'row'} css={{height: '100vh', backgroundColor: '$purple10'}}>
-                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
-                                  css={{width: '50%'}}>
-                                <ProjectImage image={odontolive1}/>
-                            </Flex>
-                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
-                                  css={{width: '50%'}}>
-                            </Flex>
-                        </Flex>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Flex direction={'row'} css={{height: '100vh', backgroundColor: '$blue12'}}>
-                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
-                                  css={{width: '50%'}}>
-                                <ProjectImage image={odontolive1}/>
-                            </Flex>
-                            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
-                                  css={{width: '50%'}}>
-                            </Flex>
-                        </Flex>
-                    </SwiperSlide>
-                </Swiper>
+                <Projects/>
             </Flex>
 
             <Flex direction={'row'} alignItems={'center'} justifyContent={'center'}

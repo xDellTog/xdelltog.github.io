@@ -6,8 +6,8 @@ import {Toolbar, ToolbarItem} from "../../components/toolbar/Toolbar";
 import {Text, Title} from "../../components/text/Text";
 import {lightTheme, styled} from "../../../theme/theme";
 import profile from './../../assets/images/profile.png';
-import github from './../../assets/images/github.svg';
-import linkedin from './../../assets/images/linkedin.svg';
+import github from './../../assets/images/icons/github.svg';
+import linkedin from './../../assets/images/icons/linkedin.svg';
 
 import {Projects} from "../../components/projects/Projects";
 
@@ -37,7 +37,7 @@ export default function HomePage({theme, toggleTheme}: PageProps) {
     return (
         <div>
             <Toolbar>
-                <ToolbarItem href="#home"> 💻 </ToolbarItem>
+                <ToolbarItem href="#home"> 💻 xDellTog </ToolbarItem>
                 <div>
                     <ToolbarItem href="#about"> About </ToolbarItem>
                     <ToolbarItem href="#projects"> Projects </ToolbarItem>
@@ -63,7 +63,7 @@ export default function HomePage({theme, toggleTheme}: PageProps) {
             </Flex>
 
             <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
-                  css={{height: '100vh', px: '16px'}}
+                  css={{height: '100vh', px: '16px', backgroundColor: '$mauve2', color: '$mauve12'}}
                   id="about">
                 <img src={profile} alt="profile" width={200}/>
                 <Flex direction={'row'} alignItems={'center'} justifyContent={'center'}>

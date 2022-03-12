@@ -8,6 +8,10 @@ import {darkTheme, lightTheme} from "../theme/theme";
 export default function App() {
     const [theme, setTheme] = useState(lightTheme);
 
+    useEffect(() => {
+        initMatchMedia();
+    }, []);
+
     function toggleTheme() {
         if (theme === lightTheme) {
             setTheme(darkTheme);
@@ -16,27 +20,23 @@ export default function App() {
         }
     }
 
-    useEffect(() => {
+    function initMatchMedia() {
         if (window.matchMedia) {
             if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                console.log('darkTheme');
                 setTheme(darkTheme);
             } else {
-                console.log('lightTheme');
                 setTheme(lightTheme);
             }
 
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
                 if (e.matches) {
-                    console.log('darkTheme');
                     setTheme(darkTheme);
                 } else {
-                    console.log('lightTheme');
                     setTheme(lightTheme);
                 }
             });
         }
-    }, []);
+    }
 
     return (
         <ThemeProvider className={theme}>

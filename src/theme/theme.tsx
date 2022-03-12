@@ -57,6 +57,12 @@ export const {css, styled, createTheme} = createStitches({
             marginBottom: value,
         }),
     },
+    theme: {
+        shadows: {
+            ...mauve,
+            ...mauveDark,
+        }
+    },
     media: {
         xs: '(min-width: 0)',
         sm: '(min-width: 576px)',

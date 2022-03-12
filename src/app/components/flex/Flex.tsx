@@ -6,7 +6,7 @@ export const Flex = styled('div', {
     variants: {
         color: {
             gray: {
-                backgroundColor: '$mauve3',
+                backgroundColor: '$mauve2',
                 color: '$mauve10'
             }
         },
@@ -42,6 +42,15 @@ export const Flex = styled('div', {
             },
             end: {
                 justifyContent: 'end',
+            },
+            around: {
+                justifyContent: 'space-around',
+            },
+            between: {
+                justifyContent: 'space-between',
+            },
+            evenly: {
+                justifyContent: 'space-evenly',
             },
         }
     }

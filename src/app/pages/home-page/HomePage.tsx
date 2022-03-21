@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import EmojiHand from "./../../components/emoji-hand/EmojiHand";
 import {PageProps} from "../Page";
 import {Flex} from "../../components/flex/Flex";
-import {Toolbar, ToolbarItem} from "../../components/toolbar/Toolbar";
+import {Toolbar, ToolbarGroup, ToolbarItem} from "../../components/toolbar/Toolbar";
 import {Text, Title} from "../../components/text/Text";
 import {lightTheme, styled} from "../../../theme/theme";
 import profile from './../../assets/images/profile.png';
@@ -34,11 +34,62 @@ export default function HomePage({theme, toggleTheme}: PageProps) {
         });
     }
 
+    function setShowMenu(show: boolean) {
+        const menu: any = document.querySelector('#menu');
+        menu.style.display = show ? 'flex' : 'none';
+    }
+
     return (
         <div>
             <Toolbar>
                 <ToolbarItem href="#home"> 💻 xDellTog </ToolbarItem>
-                <div>
+                <ToolbarItem onClick={() => setShowMenu(true)} css={{
+                    '@xs': {
+                        display: 'inline-flex',
+                    },
+                    '@sm': {
+                        display: 'none',
+                    },
+                }}> ||| </ToolbarItem>
+                <ToolbarGroup id="menu" css={{
+                    background: '$mauve1',
+                    display: 'none',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    position: 'fixed',
+                    height: '100vh',
+                    width: '100vw',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+
+                    '& > a': {
+                        py: 32,
+                    },
+                }}>
+                    <ToolbarItem onClick={() => setShowMenu(false)} href="#home"> Home </ToolbarItem>
+                    <ToolbarItem onClick={() => setShowMenu(false)} href="#about"> About </ToolbarItem>
+                    <ToolbarItem onClick={() => setShowMenu(false)} href="#projects"> Projects </ToolbarItem>
+                    <ToolbarItem onClick={() => setShowMenu(false)} href="#contact"> Contact </ToolbarItem>
+                    <ToolbarItem onClick={() => {
+                        if (!!toggleTheme) toggleTheme();
+                    }}>
+                        {(theme === lightTheme) ?
+                            (<Text>🌚</Text>) :
+                            (<Text>🌞</Text>)}
+                    </ToolbarItem>
+                    <ToolbarItem onClick={() => setShowMenu(false)}> ❌ </ToolbarItem>
+                </ToolbarGroup>
+                <ToolbarGroup css={{
+                    '@xs': {
+                        display: 'none',
+                    },
+                    '@sm': {
+                        display: 'inline-flex',
+                    },
+                }}>
                     <ToolbarItem href="#about"> About </ToolbarItem>
                     <ToolbarItem href="#projects"> Projects </ToolbarItem>
                     <ToolbarItem href="#contact"> Contact </ToolbarItem>
@@ -49,7 +100,7 @@ export default function HomePage({theme, toggleTheme}: PageProps) {
                             (<Text>🌚</Text>) :
                             (<Text>🌞</Text>)}
                     </ToolbarItem>
-                </div>
+                </ToolbarGroup>
             </Toolbar>
 
             <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
@@ -71,26 +122,19 @@ export default function HomePage({theme, toggleTheme}: PageProps) {
                         I'm front-end developer based in the Brazil. <br/>
                         With more than 3 years working with full stack development, <br/>
                         more than 10 programming languages
-                        and many tools and frameworks
+                        and many tools and frameworks.
                     </Text>
                 </Flex>
             </Flex>
 
             <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
-                  css={{minHeight: '100vh'}}
+                  css={{minHeight: '100vh', py: 56}}
                   id="projects">
-                {/*<Flex direction={'col'} alignItems={'start'} justifyContent={'center'}>
-                    <Text>- Ceofood</Text>
-                    <Text>- Odontolive</Text>
-                    <Text>- Onde Ir</Text>
-                    <Text>- Force in Solution</Text>
-                </Flex>*/}
-
                 <Projects/>
             </Flex>
 
             <Flex direction={'row'} alignItems={'center'} justifyContent={'center'}
-                  css={{height: '100vh', px: '16px'}}
+                  css={{height: '100vh', px: '16px', backgroundColor: '$mauve2', color: '$mauve12'}}
                   id="contact">
                 <ToolbarItem css={{mx: 8}} href="https://www.linkedin.com/in/daniel-tognon-703bb7162/" target="_blank">
                     <BrandIcon src={linkedin} alt="linkedin" width={24}
@@ -109,10 +153,11 @@ export default function HomePage({theme, toggleTheme}: PageProps) {
                 </ToolbarItem>*/}
             </Flex>
 
-            <Flex color={'gray'} direction={'col'} alignItems={'center'} justifyContent={'center'} css={{p: '16px'}}
+            <Flex direction={'col'} alignItems={'center'} justifyContent={'center'}
+                  css={{p: '16px'}}
                   id="footer">
                 <Text css={{textAlign: 'center'}}>
-                    Developed by xDellTog {(theme === lightTheme) ? '🖤' : '🤍'}
+                    <small>Designed and Developed by xDellTog {(theme === lightTheme) ? '🖤' : '🤍'}</small>
                 </Text>
             </Flex>
         </div>

@@ -10,20 +10,16 @@ export const Toolbar = styled('div', {
     background: '$mauve1',
     color: '$mauve12',
     display: 'flex',
-
-    // '@xs': {
-    //     display: 'none',
-    // },
-    // '@sm': {
-    //     display: 'flex',
-    // },
 })
+
+export const ToolbarGroup = styled('div', {
+    display: 'flex',
+});
 
 export const ToolbarItem = styled('a', {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    background: '$mauve1',
     color: '$mauve12',
     padding: 16,
     textDecoration: 'none',

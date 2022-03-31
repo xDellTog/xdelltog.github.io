@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import EmojiHand from "./../../components/emoji-hand/EmojiHand";
 import {PageProps} from "../Page";
 import {Flex} from "../../components/flex/Flex";
@@ -8,11 +8,9 @@ import {lightTheme, styled} from "../../../theme/theme";
 import profile from './../../assets/images/profile.png';
 import github from './../../assets/images/icons/github.svg';
 import linkedin from './../../assets/images/icons/linkedin.svg';
-
 import {Projects} from "../../components/projects/Projects";
 
 const BrandIcon = styled('img');
-const Box = styled('div');
 
 // TODO: nota de somente codigo, não design dos projetos
 

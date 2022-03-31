@@ -42,7 +42,7 @@ export default function HomePage({theme, toggleTheme}: PageProps) {
     return (
         <div>
             <Toolbar>
-                <ToolbarItem href="#home"> 💻 xDellTog </ToolbarItem>
+                <ToolbarItem href="#home"> 💻 Daniel Tognon </ToolbarItem>
                 <ToolbarItem onClick={() => setShowMenu(true)} css={{
                     '@xs': {
                         display: 'inline-flex',
@@ -157,7 +157,7 @@ export default function HomePage({theme, toggleTheme}: PageProps) {
                   css={{p: '16px'}}
                   id="footer">
                 <Text css={{textAlign: 'center'}}>
-                    <small>Designed and Developed by xDellTog {(theme === lightTheme) ? '🖤' : '🤍'}</small>
+                    <small>Designed and Developed by Me {(theme === lightTheme) ? '🖤' : '🤍'}</small>
                 </Text>
             </Flex>
         </div>

@@ -48,7 +48,9 @@ export default function HomePage({theme, toggleTheme}: PageProps) {
                     '@sm': {
                         display: 'none',
                     },
-                }}> ||| </ToolbarItem>
+                }}> 
+                    <div style={{transform: 'rotate(90deg)'}}>|||</div>
+                </ToolbarItem>
                 <ToolbarGroup id="menu" css={{
                     background: '$mauve1',
                     display: 'none',

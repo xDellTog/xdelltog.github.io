@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from "react";
-import {Autoplay, EffectFade, Navigation} from "swiper";
-import {Swiper as SwiperInternal, SwiperSlide} from "swiper/react";
+import React, { useEffect, useState } from "react";
+import { Autoplay, EffectFade, Navigation } from "swiper";
+import { Swiper as SwiperInternal, SwiperSlide } from "swiper/react";
 import odontolive1 from "../../assets/images/projects/odontolive/odontolive1.png";
 import odontolive2 from "../../assets/images/projects/odontolive/odontolive2.png";
 import odontolive3 from "../../assets/images/projects/odontolive/odontolive3.png";
@@ -15,6 +15,17 @@ import ceofood3 from "../../assets/images/projects/ceofood/ceofood3.png";
 import ceofood4 from "../../assets/images/projects/ceofood/ceofood4.png";
 import lojista1 from "../../assets/images/projects/ceofood/lojista1.png";
 import lojista2 from "../../assets/images/projects/ceofood/lojista2.png";
+import lojista3 from "../../assets/images/projects/ceofood/lojista3.png";
+import lojista4 from "../../assets/images/projects/ceofood/lojista4.png";
+import lojista5 from "../../assets/images/projects/ceofood/lojista5.png";
+import lojista6 from "../../assets/images/projects/ceofood/lojista6.png";
+import cliente1 from "../../assets/images/projects/ceofood/cliente1.png";
+import cliente2 from "../../assets/images/projects/ceofood/cliente2.png";
+import cliente3 from "../../assets/images/projects/ceofood/cliente3.png";
+import cliente4 from "../../assets/images/projects/ceofood/cliente4.png";
+import cliente5 from "../../assets/images/projects/ceofood/cliente5.png";
+import cliente6 from "../../assets/images/projects/ceofood/cliente6.png";
+import cliente7 from "../../assets/images/projects/ceofood/cliente7.png";
 import ecommerce1 from "../../assets/images/projects/ceofood/ecommerce1.png";
 import ecommerce2 from "../../assets/images/projects/ceofood/ecommerce2.png";
 import ecommerce3 from "../../assets/images/projects/ceofood/ecommerce3.png";
@@ -35,8 +46,9 @@ import "swiper/css/autoplay";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 
-import {styled} from "../../../theme/theme";
-import {ToolbarItem} from "../toolbar/Toolbar";
+import { styled } from "../../../theme/theme";
+import { ToolbarItem } from "../toolbar/Toolbar";
+import { Text } from "../text/Text";
 
 const Box = styled('div');
 const Image = styled('img');
@@ -63,7 +75,18 @@ export function Projects() {
                 ceofood2,
                 ceofood3,
                 ceofood4,
+                cliente1,
+                cliente2,
+                cliente3,
+                cliente4,
+                cliente5,
+                cliente6,
+                cliente7,
                 lojista2,
+                lojista3,
+                lojista4,
+                lojista5,
+                lojista6,
                 ecommerce1,
                 ecommerce2,
                 ecommerce3,
@@ -130,9 +153,9 @@ export function Projects() {
     }, [showPreview])
 
     function openPreview(project: any) {
-        let aux = {...showPreview};
+        let aux = { ...showPreview };
         aux[project.id] = !aux[project.id];
-        setShowPreview({...aux});
+        setShowPreview({ ...aux });
     }
 
     function closePreview() {
@@ -153,43 +176,44 @@ export function Projects() {
     }
 
     return (
-        <Box css={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(1, 1fr)',
-            gridColumnGap: '1rem',
-            gridRowGap: '1rem',
-            '@sm': {
-                gridTemplateColumns: 'repeat(2, 1fr)'
-            },
-            '@md': {
-                gridTemplateColumns: 'repeat(3, 1fr)'
-            },
-            '@lg': {
-                gridTemplateColumns: 'repeat(4, 1fr)'
-            }
-        }}>
-            {projects.map((project) => (
-                <Box css={{
-                    height: '80vw',
-                    width: '80vw',
-                    '@sm': {
-                        height: '40vw',
-                        width: '40vw',
-                    },
-                    '@md': {
-                        height: '30vw',
-                        width: '30vw',
-                    },
-                    '@lg': {
-                        height: '16vw',
-                        width: '16vw',
-                    },
-                    backgroundColor: '$mauve3',
-                    overflow: 'hidden',
-                    borderRadius: 16,
-                    cursor: 'pointer',
-                }}>
-                    <Swiper modules={[Autoplay, EffectFade]}
+        <>
+            <Box css={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(1, 1fr)',
+                gridColumnGap: '1rem',
+                gridRowGap: '1rem',
+                '@sm': {
+                    gridTemplateColumns: 'repeat(2, 1fr)'
+                },
+                '@md': {
+                    gridTemplateColumns: 'repeat(3, 1fr)'
+                },
+                '@lg': {
+                    gridTemplateColumns: 'repeat(4, 1fr)'
+                }
+            }}>
+                {projects.map((project) => (
+                    <Box css={{
+                        height: '80vw',
+                        width: '80vw',
+                        '@sm': {
+                            height: '40vw',
+                            width: '40vw',
+                        },
+                        '@md': {
+                            height: '30vw',
+                            width: '30vw',
+                        },
+                        '@lg': {
+                            height: '16vw',
+                            width: '16vw',
+                        },
+                        backgroundColor: '$mauve3',
+                        overflow: 'hidden',
+                        borderRadius: 16,
+                        cursor: 'pointer',
+                    }}>
+                        <Swiper modules={[Autoplay, EffectFade]}
                             slidesPerView={1}
                             effect={'fade'}
                             allowTouchMove={false}
@@ -199,41 +223,41 @@ export function Projects() {
                                 stopOnLastSlide: false,
                                 delay: randomIntFromInterval(2500, 3500),
                             }}
-                            css={{width: '100%', height: '100%'}}>
-                        {project.images.map((image) => (
-                            <SwiperSlide>
-                                <Image onClick={() => openPreview(project)} src={image} alt="" css={{
-                                    backgroundColor: '$mauve3',
-                                    objectFit: 'cover',
-                                    objectPosition: 'center',
-                                    width: '100%',
-                                    height: '100%'
-                                }}/>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </Box>
-            ))}
-
-            {projects.map((project) => (
-                <Box css={{
-                    position: 'fixed',
-                    top: 0,
-                    left: 0,
-                    zIndex: 100000,
-                    height: '100vh',
-                    width: '100vw',
-                    overflow: 'hidden',
-                    backgroundColor: '$mauve1',
-                    color: '$mauve12',
-                    display: showPreview[project.id] ? 'block' : 'none',
-                }}>
-                    <Box css={{position: 'fixed', right: 0, top: 0, zIndex: 100001,}}>
-                        <ToolbarItem onClick={closePreview}>
-                            ❌
-                        </ToolbarItem>
+                            css={{ width: '100%', height: '100%' }}>
+                            {project.images.map((image) => (
+                                <SwiperSlide>
+                                    <Image onClick={() => openPreview(project)} src={image} alt="" css={{
+                                        backgroundColor: '$mauve3',
+                                        objectFit: 'cover',
+                                        objectPosition: 'center',
+                                        width: '100%',
+                                        height: '100%'
+                                    }} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </Box>
-                    <Swiper modules={[Autoplay, EffectFade, Navigation]}
+                ))}
+
+                {projects.map((project) => (
+                    <Box css={{
+                        position: 'fixed',
+                        top: 0,
+                        left: 0,
+                        zIndex: 100000,
+                        height: '100vh',
+                        width: '100vw',
+                        overflow: 'hidden',
+                        backgroundColor: '$mauve1',
+                        color: '$mauve12',
+                        display: showPreview[project.id] ? 'block' : 'none',
+                    }}>
+                        <Box css={{ position: 'fixed', right: 0, top: 0, zIndex: 100001, }}>
+                            <ToolbarItem onClick={closePreview}>
+                                ❌
+                            </ToolbarItem>
+                        </Box>
+                        <Swiper modules={[Autoplay, EffectFade, Navigation]}
                             slidesPerView={1}
                             effect={'fade'}
                             navigation
@@ -245,22 +269,26 @@ export function Projects() {
                                 stopOnLastSlide: false,
                                 delay: 3000,
                             }}
-                            css={{width: '100%', height: '100%'}}>
-                        {project.previewImages.map((previewImage) => (
-                            <SwiperSlide>
-                                <Image onClick={() => openLink(project.url)} src={previewImage} alt="" css={{
-                                    backgroundColor: '$mauve1',
-                                    color: '$mauve12',
-                                    objectFit: 'contain',
-                                    objectPosition: 'center',
-                                    width: '100%',
-                                    height: '100%',
-                                }}/>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </Box>
-            ))}
-        </Box>
+                            css={{ width: '100%', height: '100%' }}>
+                            {project.previewImages.map((previewImage) => (
+                                <SwiperSlide>
+                                    <Image onClick={() => openLink(project.url)} src={previewImage} alt="" css={{
+                                        backgroundColor: '$mauve1',
+                                        color: '$mauve12',
+                                        objectFit: 'contain',
+                                        objectPosition: 'center',
+                                        width: '100%',
+                                        height: '100%',
+                                    }} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </Box>
+                ))}
+            </Box>
+            <Text css={{m:16, fontSize: 16}}>
+                * These aren't my designs, just code.
+            </Text>
+        </>
     );
 }

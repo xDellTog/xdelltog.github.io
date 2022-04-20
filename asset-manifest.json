@@ -1,14 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.07a3d2ef.css",
-    "main.js": "/static/js/main.a9cceeb2.js",
+    "main.js": "/static/js/main.a418529f.js",
     "static/media/ecommerce2.png": "/static/media/ecommerce2.dabca68914f8653844a3.png",
     "static/media/ceofood2.png": "/static/media/ceofood2.598412861891719f7fee.png",
     "static/media/ecommerce1.png": "/static/media/ecommerce1.30dd04f6da6c8cc22ca6.png",
     "static/media/ondeir4.png": "/static/media/ondeir4.ec7f1b02b07933331c29.png",
+    "static/media/lojista3.png": "/static/media/lojista3.058f4acffb41efacd719.png",
     "static/media/web4.png": "/static/media/web4.a5e669dfca4057f5bb6b.png",
+    "static/media/cliente6.png": "/static/media/cliente6.623362f629a26b5aeed1.png",
     "static/media/ondeir3.png": "/static/media/ondeir3.017073caaac28b0e68f3.png",
     "static/media/web3.png": "/static/media/web3.956dca564db8cc71f352.png",
+    "static/media/cliente5.png": "/static/media/cliente5.7ee2c4bd496fd457c4a5.png",
     "static/media/ceofood1.png": "/static/media/ceofood1.94f10b5ca07cd1a9ccff.png",
     "static/media/web2.png": "/static/media/web2.11d320976335d7a562d2.png",
     "static/media/ecommerce3.png": "/static/media/ecommerce3.e413fbb8bce71dfeafcf.png",
@@ -16,18 +19,26 @@
     "static/media/ondeir2.png": "/static/media/ondeir2.26f3e93b0c41ee8d7dfb.png",
     "static/media/ceofood3.png": "/static/media/ceofood3.fd6d9a8b9a05a16f57c2.png",
     "static/media/ceofood4.png": "/static/media/ceofood4.9a076a79db50e1c6f569.png",
+    "static/media/cliente4.png": "/static/media/cliente4.c2f290d115a41fe19264.png",
     "static/media/odontolive4.png": "/static/media/odontolive4.b3d7ea42aaf7d17d9332.png",
     "static/media/web1.png": "/static/media/web1.112f4a420a7ad27484e7.png",
+    "static/media/lojista5.png": "/static/media/lojista5.af8c1562071605f97162.png",
     "static/media/credenciado4.png": "/static/media/credenciado4.3971d8571b217d5a34ef.png",
+    "static/media/cliente2.png": "/static/media/cliente2.c823df0d9d72ee65d0e8.png",
+    "static/media/cliente3.png": "/static/media/cliente3.cb21278c27ef3ce853da.png",
     "static/media/fis3.png": "/static/media/fis3.ee0b67c1ce23db917978.png",
+    "static/media/lojista6.png": "/static/media/lojista6.ede839993b9baea6888c.png",
     "static/media/ondeir1.png": "/static/media/ondeir1.20a43b9ef850faaf7080.png",
     "static/media/odontolive3.png": "/static/media/odontolive3.7d59374a6bdeb5a1b9e9.png",
     "static/media/lojista1.png": "/static/media/lojista1.dbc5e3adbbc70aa77fed.png",
     "static/media/fis4.png": "/static/media/fis4.837b72fe1214a8d57ada.png",
     "static/media/credenciado3.png": "/static/media/credenciado3.2207aa960d895eb20d33.png",
+    "static/media/cliente7.png": "/static/media/cliente7.79a2b4beb32255cc9a26.png",
     "static/media/credenciado2.png": "/static/media/credenciado2.63d962dac788ffab0076.png",
     "static/media/odontolive2.png": "/static/media/odontolive2.2e595e739b443f06d5f8.png",
     "static/media/profile.png": "/static/media/profile.e76dfead7c4b0afa0cad.png",
+    "static/media/lojista4.png": "/static/media/lojista4.00b7dd96498f61cd0b7f.png",
+    "static/media/cliente1.png": "/static/media/cliente1.f426241b494c893be299.png",
     "static/media/fis2.png": "/static/media/fis2.9096a9ab55af96dd0d54.png",
     "static/media/fis1.png": "/static/media/fis1.fcefd503d440f47a0839.png",
     "static/media/credenciado1.png": "/static/media/credenciado1.cb3d685008020fe418a1.png",
@@ -36,10 +47,10 @@
     "static/media/linkedin.svg": "/static/media/linkedin.9f086df7a5f03e992831d53a2e18081f.svg",
     "index.html": "/index.html",
     "main.07a3d2ef.css.map": "/static/css/main.07a3d2ef.css.map",
-    "main.a9cceeb2.js.map": "/static/js/main.a9cceeb2.js.map"
+    "main.a418529f.js.map": "/static/js/main.a418529f.js.map"
   },
   "entrypoints": [
     "static/css/main.07a3d2ef.css",
-    "static/js/main.a9cceeb2.js"
+    "static/js/main.a418529f.js"
   ]
 }

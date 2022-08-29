@@ -8,8 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      NEXT_PUBLIC_BASE_PATH: '/nextjs-gh-pages'
+    # env:
+    #   NEXT_PUBLIC_BASE_PATH: '/nextjs-gh-pages'
 
     strategy:
       matrix:
